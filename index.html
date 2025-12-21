@@ -1,386 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shawarma Wolf Menu</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a2332 0%, #0f1621 100%);
-            color: #fff;
-            min-height: 100vh;
-            padding: 20px;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #1a2332 0%, #0f1621 100%);
+        color: #fff;
+        min-height: 100vh;
+        padding: 20px;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        color: #000000;
+        min-height: 100vh;
+        padding: 20px;
+        margin: 0;
+      }
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(218, 165, 32, 0.1);
-            border-radius: 20px;
-            margin-bottom: 40px;
-            border: 2px solid #daa520;
-        }
+      /* Style ON */
+      body.styled-bg {
+        background: url("./background.jpg") no-repeat fixed;
+        background-size: cover;
+      }
 
-        .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            background: #daa520;
-            border-radius: 50%;
-            padding: 15px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+      }
 
-        .logo svg {
-            width: 100%;
-            height: 100%;
-        }
+      /* Blur effect ON */
+      .container.blur-style {
+        background: rgba(12, 1, 1, 0.303);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(218, 165, 32, 0.546);
+      }
+      header {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(218, 165, 32, 0.1);
+        border-radius: 20px;
+        margin-bottom: 40px;
+        border: 2px solid #daa520;
+      }
 
+      .logo {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        background: #daa520;
+        border-radius: 50%;
+        padding: 15px;
+      }
+
+      .logo svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        color: #daa520;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .subtitle {
+        font-size: 1.2em;
+        color: #f0e68c;
+      }
+
+      .language-toggle {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .lang-btn {
+        background: #daa520;
+        color: #1a2332;
+        border: none;
+        padding: 12px 30px;
+        margin: 0 10px;
+        border-radius: 25px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .lang-btn:hover {
+        background: #f0e68c;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+      }
+
+      .lang-btn.active {
+        background: #f0e68c;
+        box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
+      }
+
+      .menu-section {
+        /* display: none; */
+        animation: fadeIn 0.5s;
+      }
+
+      .menu-section.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .category {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(218, 165, 32, 0.3);
+      }
+
+      .category h2 {
+        color: #daa520;
+        font-size: 2em;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #daa520;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .category-icon {
+        font-size: 1.2em;
+      }
+
+      .menu-item {
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+      }
+
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+
+      .item-info {
+        flex: 1;
+        text-align: center;
+      }
+
+      .item-name {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #f0e68c;
+        margin-bottom: 5px;
+      }
+
+      .item-description {
+        font-size: 0.9em;
+        color: #ccc;
+        font-style: italic;
+      }
+
+      .item-price {
+        font-size: 1.5em;
+        color: #daa520;
+        font-weight: bold;
+        margin-left: 20px;
+      }
+
+      .ar {
+        direction: rtl;
+        text-align: right;
+      }
+
+      .ar .menu-item {
+        flex-direction: row-reverse;
+      }
+
+      .ar .item-price {
+        margin-right: 20px;
+        margin-left: 0;
+      }
+      #fam {
+        border: 1px solid rgb(255, 19, 19);
+        border-radius: 10px;
+        padding: 20px;
+      }
+      #button{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+      }
+      #styleToggle{
+        background: none;
+        border: none;
+      }
+      
+      @media (max-width: 768px) {
         h1 {
-            font-size: 2.5em;
-            color: #daa520;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #f0e68c;
-            
-        }
-
-        .language-toggle {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .lang-btn {
-            background: #daa520;
-            color: #1a2332;
-            border: none;
-            padding: 12px 30px;
-            margin: 0 10px;
-            border-radius: 25px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .lang-btn:hover {
-            background: #f0e68c;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
-        }
-
-        .lang-btn.active {
-            background: #f0e68c;
-            box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
-        }
-
-        .menu-section {
-            /* display: none; */
-            animation: fadeIn 0.5s;
-        }
-
-        .menu-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .category {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(218, 165, 32, 0.3);
-        }
-
-        .category h2 {
-            color: #daa520;
-            font-size: 2em;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #daa520;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .category-icon {
-            font-size: 1.2em;
+          font-size: 2em;
         }
 
         .menu-item {
-            display: flex;
-            gap: 50px;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(218, 165, 32, 0.2);
-        }
-
-        .menu-item:last-child {
-            border-bottom: none;
-        }
-
-        .item-info {
-            flex: 1;
-            text-align: center;
-        }
-
-        .item-name {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #f0e68c;
-            margin-bottom: 5px;
-        }
-
-        .item-description {
-            font-size: 0.9em;
-            color: #ccc;
-            font-style: italic;
-        }
-
-        .item-price {
-            font-size: 1.5em;
-            color: #daa520;
-            font-weight: bold;
-            margin-left: 20px;
-        }
-
-        .ar {
-            direction: rtl;
-            text-align: right;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
         }
 
         .ar .menu-item {
-            flex-direction: row-reverse;
+          align-items: flex-end;
         }
 
-        .ar .item-price {
-            margin-right: 20px;
-            margin-left: 0;
+        .item-price {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
-        #fam {
-                border: 1px solid rgb(255, 19, 19);
-                border-radius: 10px;
-                padding: 20px;
-            }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            .menu-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .ar .menu-item {
-                align-items: flex-end;
-            }
-
-            .item-price {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-            
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <button id="styleToggle" class="toggle-btn"><img id="button" src="./dark-theme-svgrepo-com.svg" alt=""></button>
     <div class="container">
-        <header>
-            <img class="logo" src="./logo.png" alt="" srcset="" width="140">
-            <h1>Shawarma Wolf</h1>
-            <p class="subtitle">شاورما الذيب</p>
-        </header>
-        <!-- Arabic Menu -->
-        <div id="ar-menu" class="menu-section ar">
-            <div class="category">
-                <h2><span class="category-icon"><img src="shawerma.png" alt="" width="50px"></span> شاورما الذيب</h2>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">ساندويش شاورما الذيب</div>
-                        <div class="item-description">  سادويش حجم كبير من الشاورما اللذيذة مع مثومة ذيبة 🐺 زاكية جدا </div>
-                    </div>
-                    <div class="item-price">1.25 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">(s) وجبة شاورما الذيب </div>
-                        <div class="item-description">وجبة حجم عادي من الشاورما اللذيذة مع مثومة ذيبة 🐺 وبطاطا زاكية جدا ومخلل</div>
-                    </div>
-                    <div class="item-price">2.45 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">(M) وجبة شاورما الذيب </div>
-                        <div class="item-description">وجبة حجم سوبر من الشاورما اللذيذة مع مثومة ذيبة 🐺 وبطاطا زاكية جدا ومخلل</div>
-                    </div>
-                    <div class="item-price">3.10 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">(L) وجبة شاورما الذيب </div>
-                        <div class="item-description">وجبة حجم دبل من الشاورما اللذيذة مع مثومة ذيبة 🐺 وبطاطا زاكية جدا ومخلل</div>
-                    </div>
-                    <div class="item-price">3.75 د.أ</div>
-                </div>
-                <div class="menu-item" >
-                    <div class="item-info">
-                        <div class="item-name">(XL) وجبة شاورما الذيب </div>
-                        <div class="item-description">وجبة حجم تربل من الشاورما اللذيذة مع مثومة ذيبة 🐺 وعلبة بطاطا زاكية جدا ومخلل</div>
-                    </div>
-                    <div class="item-price">5 د.أ</div>
-                </div>
-                <div class="menu-item" id="fam">
-                    <div class="item-info" >
-                        <div class="item-name"> وجبة شاورما الذيب العائلية</div>
-                        <div class="item-description">وجبة حجم عائلي تتكون من 7 ساندويشات مع 3 علب مثومة 🐺 و3  علب بطاطا زاكية جدا و 3 علب مخلل مع لتر ماتريكس</div>
-                    </div>
-                    <div class="item-price">12.00 د.أ</div>
-                </div>
+      <header>
+        <img class="logo" src="./logo.png" alt="" srcset="" width="140" />
+        <h1>Shawarma Wolf</h1>
+        <p class="subtitle">شاورما الذيب</p>
+      </header>
+      <!-- Arabic Menu -->
+      <div id="ar-menu" class="menu-section ar">
+        <div class="category">
+          <h2>
+            <span class="category-icon"
+              ><img src="shawerma.png" alt="" width="50px"
+            /></span>
+            شاورما الذيب
+          </h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ساندويش شاورما الذيب</div>
+              <div class="item-description">
+                سادويش حجم كبير من الشاورما اللذيذة مع مثومة ذيبة 🐺 زاكية جدا
+              </div>
             </div>
-
-            <div class="category">
-                <h2><span class="category-icon"><img src="zinger.png" alt="" width="50px"></span> زنجر الذيب</h2>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">ساندويش زنجر الذيب</div>
-                        <div class="item-description">فرنسي \ شراك \ تورتيلا \ حار \ بارد</div>
-                    </div>
-                    <div class="item-price">2.25 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">وجبة زنجر الذيب</div>
-                        <div class="item-description"> (بطاطا + ماتريكس)  فرنسي \ شراك \ تورتيلا \ حار \ بارد</div>
-                    </div>
-                    <div class="item-price">3.25 د.أ</div>
-                </div>
+            <div class="item-price">1.25 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(s) وجبة شاورما الذيب</div>
+              <div class="item-description">
+                وجبة حجم عادي من الشاورما اللذيذة مع مثومة ذيبة 🐺 وبطاطا زاكية
+                جدا ومخلل
+              </div>
             </div>
-
-            <div class="category">
-                <h2><span class="category-icon">🍔</span> برجر سماش</h2>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">ساندويش برجر سماش (150 جرام)</div>
-                        <div class="item-description">طبقتين من لحم الانجوس الي رح توكل اصابعك وراهم</div>
-                    </div>
-                    <div class="item-price">3.75 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">ساندويش برجر سماش (225 جرام)</div>
-                        <div class="item-description"> ثلاث طبقات من لحم الانجوس الي رح توكل اصابعك وراهم</div>
-                    </div>
-                    <div class="item-price">4.75 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">ساندويش برجر سماش (300 جرام)</div>
-                        <div class="item-description">اربع طبقات من لحم الانجوس الي رح توكل اصابعك وراهم</div>
-                    </div>
-                    <div class="item-price">5.75 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">وجبة برجر سماش (150 جرام)</div>
-                        <div class="item-description">(بطاطا + ماتريكس) طبقتين من لحم الانجوس الي رح توكل اصابعك وراهم</div>
-                    </div>
-                    <div class="item-price">4.75 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">وجبة برجر سماش (225 جرام)</div>
-                        <div class="item-description">(بطاطا + ماتريكس) ثلاث طبقات من لحم الانجوس الي رح توكل اصابعك وراهم </div>
-                    </div>
-                    <div class="item-price">5.75 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">وجبة برجر سماش (300 جرام)</div>
-                        <div class="item-description">(بطاطا + ماتريكس) اربع طبقات من لحم الانجوس الي رح توكل اصابعك وراهم</div>
-                    </div>
-                    <div class="item-price">6.75 د.أ</div>
-                </div>
+            <div class="item-price">2.45 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(M) وجبة شاورما الذيب</div>
+              <div class="item-description">
+                وجبة حجم سوبر من الشاورما اللذيذة مع مثومة ذيبة 🐺 وبطاطا زاكية
+                جدا ومخلل
+              </div>
             </div>
-
-            <div class="category">
-                <h2><span class="category-icon">🍔</span> برجر دجاج (ناشفيلد)</h2>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">ساندويش برجر دجاج</div>
-                        <div class="item-description">برجر ناشفيلد رهيب جدا</div>
-                    </div>
-                    <div class="item-price">2.75 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">وجبة برجر دجاج</div>
-                        <div class="item-description">وجبة برجر ناشفيلد رهيب جدا (بطاطا + ماتريكس) </div>
-                    </div>
-                    <div class="item-price">3.75 د.أ</div>
-                </div>
+            <div class="item-price">3.10 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(L) وجبة شاورما الذيب</div>
+              <div class="item-description">
+                وجبة حجم دبل من الشاورما اللذيذة مع مثومة ذيبة 🐺 وبطاطا زاكية
+                جدا ومخلل
+              </div>
             </div>
-            <div class="category">
-                <h2><span class="category-icon">🍟</span> الإضافات</h2>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">بطاطا مقلية</div>
-                        <div class="item-description">بطاطا مقرمشة ذهبية</div>
-                    </div>
-                    <div class="item-price">0.75 د.أ</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-info">
-                        <div class="item-name">ماتريكس</div>
-                        <div class="item-description">مشروب ماتريكس(علبة)</div>
-                    </div>
-                    <div class="item-price">0.25 د.أ</div>
-                </div>
+            <div class="item-price">3.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(XL) وجبة شاورما الذيب</div>
+              <div class="item-description">
+                وجبة حجم تربل من الشاورما اللذيذة مع مثومة ذيبة 🐺 وعلبة بطاطا
+                زاكية جدا ومخلل
+              </div>
             </div>
+            <div class="item-price">5 د.أ</div>
+          </div>
+          <div class="menu-item" id="fam">
+            <div class="item-info">
+              <div class="item-name">وجبة شاورما الذيب العائلية</div>
+              <div class="item-description">
+                وجبة حجم عائلي تتكون من 7 ساندويشات مع 3 علب مثومة 🐺 و3 علب
+                بطاطا زاكية جدا و 3 علب مخلل مع لتر ماتريكس
+              </div>
+            </div>
+            <div class="item-price">12.00 د.أ</div>
+          </div>
         </div>
+
+        <div class="category">
+          <h2>
+            <span class="category-icon"
+              ><img src="zinger.png" alt="" width="50px"
+            /></span>
+            زنجر الذيب
+          </h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ساندويش زنجر الذيب</div>
+              <div class="item-description">
+                فرنسي \ شراك \ تورتيلا \ حار \ بارد
+              </div>
+            </div>
+            <div class="item-price">2.25 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">وجبة زنجر الذيب</div>
+              <div class="item-description">
+                (بطاطا + ماتريكس) فرنسي \ شراك \ تورتيلا \ حار \ بارد
+              </div>
+            </div>
+            <div class="item-price">3.25 د.أ</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2><span class="category-icon">🍔</span> برجر سماش</h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ساندويش برجر سماش (150 جرام)</div>
+              <div class="item-description">
+                طبقتين من لحم الانجوس الي رح توكل اصابعك وراهم
+              </div>
+            </div>
+            <div class="item-price">3.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ساندويش برجر سماش (225 جرام)</div>
+              <div class="item-description">
+                ثلاث طبقات من لحم الانجوس الي رح توكل اصابعك وراهم
+              </div>
+            </div>
+            <div class="item-price">4.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ساندويش برجر سماش (300 جرام)</div>
+              <div class="item-description">
+                اربع طبقات من لحم الانجوس الي رح توكل اصابعك وراهم
+              </div>
+            </div>
+            <div class="item-price">5.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">وجبة برجر سماش (150 جرام)</div>
+              <div class="item-description">
+                (بطاطا + ماتريكس) طبقتين من لحم الانجوس الي رح توكل اصابعك وراهم
+              </div>
+            </div>
+            <div class="item-price">4.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">وجبة برجر سماش (225 جرام)</div>
+              <div class="item-description">
+                (بطاطا + ماتريكس) ثلاث طبقات من لحم الانجوس الي رح توكل اصابعك
+                وراهم
+              </div>
+            </div>
+            <div class="item-price">5.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">وجبة برجر سماش (300 جرام)</div>
+              <div class="item-description">
+                (بطاطا + ماتريكس) اربع طبقات من لحم الانجوس الي رح توكل اصابعك
+                وراهم
+              </div>
+            </div>
+            <div class="item-price">6.75 د.أ</div>
+          </div>
+        </div>
+
+        <div class="category">
+          <h2><span class="category-icon">🍔</span> برجر دجاج (ناشفيلد)</h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ساندويش برجر دجاج</div>
+              <div class="item-description">برجر ناشفيلد رهيب جدا</div>
+            </div>
+            <div class="item-price">2.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">وجبة برجر دجاج</div>
+              <div class="item-description">
+                وجبة برجر ناشفيلد رهيب جدا (بطاطا + ماتريكس)
+              </div>
+            </div>
+            <div class="item-price">3.75 د.أ</div>
+          </div>
+        </div>
+        <div class="category">
+          <h2><span class="category-icon">🍟</span> الإضافات</h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">بطاطا مقلية</div>
+              <div class="item-description">بطاطا مقرمشة ذهبية</div>
+            </div>
+            <div class="item-price">0.75 د.أ</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ماتريكس</div>
+              <div class="item-description">مشروب ماتريكس(علبة)</div>
+            </div>
+            <div class="item-price">0.25 د.أ</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-        // function showLanguage(lang) {
-        //     const enMenu = document.getElementById('en-menu');
-        //     const arMenu = document.getElementById('ar-menu');
-        //     const buttons = document.querySelectorAll('.lang-btn');
+      const btn = document.getElementById("styleToggle");
+      const body = document.body;
+      const container = document.querySelector(".container");
 
-        //     buttons.forEach(btn => btn.classList.remove('active'));
+      btn.addEventListener("click", () => {
+        body.classList.toggle("styled-bg");
+        container.classList.toggle("blur-style");
+      });
+      // function showLanguage(lang) {
+      //     const enMenu = document.getElementById('en-menu');
+      //     const arMenu = document.getElementById('ar-menu');
+      //     const buttons = document.querySelectorAll('.lang-btn');
 
-        //     if (lang === 'ar') {
-        //         enMenu.classList.add('active');
-        //         arMenu.classList.remove('active');
-        //         buttons[0].classList.add('active');
-        //     } else {
-        //         arMenu.classList.add('active');
-        //         enMenu.classList.remove('active');
-        //         buttons[1].classList.add('active');
-        //     }
-        // }
+      //     buttons.forEach(btn => btn.classList.remove('active'));
+
+      //     if (lang === 'ar') {
+      //         enMenu.classList.add('active');
+      //         arMenu.classList.remove('active');
+      //         buttons[0].classList.add('active');
+      //     } else {
+      //         arMenu.classList.add('active');
+      //         enMenu.classList.remove('active');
+      //         buttons[1].classList.add('active');
+      //     }
+      // }
     </script>
-</body>
+  </body>
 </html>
