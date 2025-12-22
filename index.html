@@ -79,7 +79,10 @@ body.styled-bg::before {
 }
 
 header {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 50px 25px;
     background: linear-gradient(
         180deg,
@@ -90,16 +93,16 @@ header {
     margin-bottom: 50px;
     border: 2px solid rgba(218, 165, 32, 0.7);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    padding: 0;
 }
 
 .logo {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
+    width:100%;
     background: radial-gradient(circle, #daa520, #b8860b);
-    padding: 12px;
-    margin-bottom: 25px;
-}
+    padding: 0;
+    border-radius: 25px;
+    box-shadow: #f0e68c 5px 2px 50px 2px;
+  }
 
 h1 {
     font-size: 2.6em;
@@ -187,9 +190,7 @@ h1 {
 
 <div class="container">
     <header>
-        <img class="logo" src="./photos/logo.png" alt="Shawarma Wolf Logo">
-        <h1>Shawarma Wolf</h1>
-        <p class="subtitle">شاورما الذيب</p>
+        <img class="logo" src="./photos/logo (2).jpg" alt="Shawarma Wolf Logo">
     </header>
       <div id="ar-menu" class="menu-section ar">
         <div class="category ar">
