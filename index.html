@@ -1,198 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shawarma Wolf Menu</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Shawarma Wolf Menu</title>
+  </head>
 
-<style>
-/* ================= RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <body>
+    <button id="styleToggle" aria-label="Toggle background style">
+       EN
+    </button>
 
-/* ================= BODY ================= */
-body {
-    font-family: "Arial", sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1a2332 0%, #0f1621 100%);
-    color: #ffffff;
-    transition: background 0.4s ease;
-    position: relative;
-}
-
-body.styled-bg {
-  background: url("./photos/background.jpg") center / cover no-repeat fixed;
-  background-size: cover;
-}
-
-body.styled-bg::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: -1;
-}
-
-#styleToggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: rgba(218, 165, 32, 0.95);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, background 0.3s ease;
-    z-index: 999;
-}
-
-#styleToggle:hover {
-    transform: rotate(15deg) scale(1.1);
-    background: #f0e68c;
-}
-
-#styleToggle img {
-    width: 26px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 35px;
-    border-radius: 22px;
-    transition: all 0.4s ease;
-}
-
-.container.blur-style {
-    background: rgba(15, 15, 15, 0.55);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(218, 165, 32, 0.5);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 25px;
-    background: linear-gradient(
-        180deg,
-        rgba(218, 165, 32, 0.15),
-        rgba(0, 0, 0, 0.1)
-    );
-    border-radius: 25px;
-    margin-bottom: 50px;
-    border: 2px solid rgba(218, 165, 32, 0.7);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    padding: 0;
-}
-
-.logo {
-    width:100%;
-    background: radial-gradient(circle, #daa520, #b8860b);
-    padding: 0;
-    border-radius: 25px;
-    box-shadow: #f0e68c 5px 2px 50px 2px;
-  }
-
-h1 {
-    font-size: 2.6em;
-    color: #daa520;
-}
-
-.subtitle {
-    font-size: 1.2em;
-    color: #f0e68c;
-}
-
-.category {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 18px;
-    padding: 30px;
-    margin-bottom: 35px;
-    border: 1px solid rgba(218, 165, 32, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.category:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
-}
-
-.category h2 {
-    color: #daa520;
-    font-size: 2em;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #daa520;
-    padding-bottom: 10px;
-}
-
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 0;
-    border-bottom: 1px dashed rgba(218, 165, 32, 0.3);
-}
-
-.menu-item:last-child {
-    border-bottom: none;
-}
-
-.item-name {
-    font-size: 1.15em;
-    font-weight: bold;
-    color: #f5deb3;
-}
-
-.item-description {
-    font-size: 0.9em;
-    color: #d6d6d6;
-}
-
-.item-price {
-    font-size: 1.4em;
-    color: #daa520;
-    font-weight: bold;
-}
-
-.ar {
-    direction: rtl;
-    text-align: right;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    .menu-item {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<button id="styleToggle" aria-label="Toggle background style">
-    <img src="./photos/dark-theme-svgrepo-com.svg" alt="">
-</button>
-
-<div class="container">
-    <header>
-        <img class="logo" src="./photos/logo (2).jpg" alt="Shawarma Wolf Logo">
-    </header>
-      <div id="ar-menu" class="menu-section ar">
+    <div class="container">
+      <header>
+        <img
+          class="logo"
+          src="./photos/logo (2).jpg"
+          alt="Shawarma Wolf Logo"
+        />
+      </header>
+      <div id="ar-menu" class="menu-section ar ">
         <div class="category ar">
           <h2>
             <span class="category-icon"
@@ -213,8 +41,7 @@ h1 {
             <div class="item-info">
               <div class="item-name">(s) وجبة شاورما الذيب</div>
               <div class="item-description">
-                وجبة حجم عادي من دجاج الشاورما مع مثومة وبطاطا 
-                 ومخلل
+                وجبة حجم عادي من دجاج الشاورما مع مثومة وبطاطا ومخلل
               </div>
             </div>
             <div class="item-price">2.45 د.أ</div>
@@ -223,8 +50,7 @@ h1 {
             <div class="item-info">
               <div class="item-name">(M) وجبة شاورما الذيب</div>
               <div class="item-description">
-                وجبة حجم سوبر من دجاج الشاورما مع مثومة وبطاطا 
-                 ومخلل
+                وجبة حجم سوبر من دجاج الشاورما مع مثومة وبطاطا ومخلل
               </div>
             </div>
             <div class="item-price">3.10 د.أ</div>
@@ -251,8 +77,8 @@ h1 {
             <div class="item-info">
               <div class="item-name">وجبة شاورما الذيب العائلية</div>
               <div class="item-description">
-                وجبة حجم عائلي تتكون من 7 ساندويشات مع 3 علب مثومةو3 علب
-                بطاطا و 3 علب مخلل مع لتر ماتريكس
+                وجبة حجم عائلي تتكون من 7 ساندويشات مع 3 علب مثومةو3 علب بطاطا و
+                3 علب مخلل مع لتر ماتريكس
               </div>
             </div>
             <div class="item-price">12.00 د.أ</div>
@@ -291,27 +117,21 @@ h1 {
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">ساندويش برجر سماش (150 جرام)</div>
-              <div class="item-description">
-                طبقتين من لحم الانجوس 
-              </div>
+              <div class="item-description">طبقتين من لحم الانجوس</div>
             </div>
             <div class="item-price">3.75 د.أ</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">ساندويش برجر سماش (225 جرام)</div>
-              <div class="item-description">
-                ثلاث طبقات من لحم الانجوس 
-              </div>
+              <div class="item-description">ثلاث طبقات من لحم الانجوس</div>
             </div>
             <div class="item-price">4.75 د.أ</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">ساندويش برجر سماش (300 جرام)</div>
-              <div class="item-description">
-                اربع طبقات من لحم الانجوس 
-              </div>
+              <div class="item-description">اربع طبقات من لحم الانجوس</div>
             </div>
             <div class="item-price">5.75 د.أ</div>
           </div>
@@ -319,7 +139,7 @@ h1 {
             <div class="item-info">
               <div class="item-name">وجبة برجر سماش (150 جرام)</div>
               <div class="item-description">
-                (بطاطا + ماتريكس) طبقتين من لحم الانجوس 
+                (بطاطا + ماتريكس) طبقتين من لحم الانجوس
               </div>
             </div>
             <div class="item-price">4.75 د.أ</div>
@@ -328,8 +148,7 @@ h1 {
             <div class="item-info">
               <div class="item-name">وجبة برجر سماش (225 جرام)</div>
               <div class="item-description">
-                (بطاطا + ماتريكس) ثلاث طبقات من لحم الانجوس
-                وراهم
+                (بطاطا + ماتريكس) ثلاث طبقات من لحم الانجوس وراهم
               </div>
             </div>
             <div class="item-price">5.75 د.أ</div>
@@ -338,7 +157,7 @@ h1 {
             <div class="item-info">
               <div class="item-name">وجبة برجر سماش (300 جرام)</div>
               <div class="item-description">
-                (بطاطا + ماتريكس) اربع طبقات من لحم الانجوس 
+                (بطاطا + ماتريكس) اربع طبقات من لحم الانجوس
               </div>
             </div>
             <div class="item-price">6.75 د.أ</div>
@@ -350,7 +169,7 @@ h1 {
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">ساندويش برجر دجاج</div>
-              <div class="item-description">برجر ناشفيلد </div>
+              <div class="item-description">برجر ناشفيلد</div>
             </div>
             <div class="item-price">2.75 د.أ</div>
           </div>
@@ -365,11 +184,15 @@ h1 {
           </div>
         </div>
         <div class="category">
-          <h2><span class="category-icon">🍟</span> ساندويش بطاطا + الإضافات</h2>
+          <h2>
+            <span class="category-icon">🍟</span> ساندويش بطاطا + الإضافات
+          </h2>
           <div class="menu-item">
             <div class="item-info">
-              <div class="item-name">ساندويش بطاطا </div>
-              <div class="item-description">ساندويش بطاطا (تورتيلا \ شراك \ فرنسي )</div>
+              <div class="item-name">ساندويش بطاطا</div>
+              <div class="item-description">
+                ساندويش بطاطا (تورتيلا \ شراك \ فرنسي )
+              </div>
             </div>
             <div class="item-price">1.00 د.أ</div>
           </div>
@@ -389,18 +212,201 @@ h1 {
           </div>
         </div>
       </div>
-</div>
+      <div id="en-menu" class="menu-section en hidden">
+        <div class="category">
+          <h2>
+            <span class="category-icon"
+              ><img src="./photos/shawerma.png" alt="" width="50px"
+            /></span>
+            Al-Theeb Shawarma
+          </h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Al-Theeb Shawarma Sandwich</div>
+              <div class="item-description">
+                Large shawarma chicken sandwich with garlic sauce
+              </div>
+            </div>
+            <div class="item-price">1.25 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(S) Al-Theeb Shawarma Meal</div>
+              <div class="item-description">
+                Regular-size shawarma chicken meal with garlic sauce, fries, and pickles
+              </div>
+            </div>
+            <div class="item-price">2.45 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(M) Al-Theeb Shawarma Meal</div>
+              <div class="item-description">
+                Super-size shawarma chicken meal with garlic sauce, fries, and pickles
+              </div>
+            </div>
+            <div class="item-price">3.10 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(L) Al-Theeb Shawarma Meal</div>
+              <div class="item-description">
+                Double-size shawarma chicken meal with garlic sauce, fries, and pickles
+              </div>
+            </div>
+            <div class="item-price">3.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">(XL) Al-Theeb Shawarma Meal</div>
+              <div class="item-description">
+                Triple-size shawarma chicken meal with garlic sauce, a box of fries, and pickles
+              </div>
+            </div>
+            <div class="item-price">5 JOD</div>
+          </div>
+          <div class="menu-item" id="fam">
+            <div class="item-info">
+              <div class="item-name">Al-Theeb Family Shawarma Meal</div>
+              <div class="item-description">
+                Family-size meal consisting of 7 sandwiches with 3 garlic sauce cups,
+                3 fries boxes, and 3 pickle cups with 1 liter Matrix
+              </div>
+            </div>
+            <div class="item-price">12.00 JOD</div>
+          </div>
+        </div>
 
-<script>
-const btn = document.getElementById("styleToggle");
-const body = document.body;
-const container = document.querySelector(".container");
+        <div class="category">
+          <h2>
+            <span class="category-icon"
+              ><img src="./photos/zinger.png" alt="" width="50px"
+            /></span>
+            Al-Theeb Zinger
+          </h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Al-Theeb Zinger Sandwich</div>
+              <div class="item-description">
+                French \ Shrak \ Tortilla \ Spicy \ Mild
+              </div>
+            </div>
+            <div class="item-price">2.25 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Al-Theeb Zinger Meal</div>
+              <div class="item-description">
+                (Fries + Matrix) French \ Shrak \ Tortilla \ Spicy \ Mild
+              </div>
+            </div>
+            <div class="item-price">3.25 JOD</div>
+          </div>
+        </div>
 
-btn.addEventListener("click", () => {
-    body.classList.toggle("styled-bg");
-    container.classList.toggle("blur-style");
-});
-</script>
+        <div class="category">
+          <h2><span class="category-icon">🍔</span> Smash Burger</h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Smash Burger Sandwich (150g)</div>
+              <div class="item-description">Two layers of Angus beef</div>
+            </div>
+            <div class="item-price">3.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Smash Burger Sandwich (225g)</div>
+              <div class="item-description">Three layers of Angus beef</div>
+            </div>
+            <div class="item-price">4.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Smash Burger Sandwich (300g)</div>
+              <div class="item-description">Four layers of Angus beef</div>
+            </div>
+            <div class="item-price">5.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Smash Burger Meal (150g)</div>
+              <div class="item-description">
+                (Fries + Matrix) Two layers of Angus beef
+              </div>
+            </div>
+            <div class="item-price">4.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Smash Burger Meal (225g)</div>
+              <div class="item-description">
+                (Fries + Matrix) Three layers of Angus beef
+              </div>
+            </div>
+            <div class="item-price">5.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Smash Burger Meal (300g)</div>
+              <div class="item-description">
+                (Fries + Matrix) Four layers of Angus beef
+              </div>
+            </div>
+            <div class="item-price">6.75 JOD</div>
+          </div>
+        </div>
 
-</body>
+        <div class="category">
+          <h2><span class="category-icon">🍔</span> Chicken Burger (Nashville)</h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Chicken Burger Sandwich</div>
+              <div class="item-description">Nashville burger</div>
+            </div>
+            <div class="item-price">2.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Chicken Burger Meal</div>
+              <div class="item-description">
+                Nashville burger meal (Fries + Matrix)
+              </div>
+            </div>
+            <div class="item-price">3.75 JOD</div>
+          </div>
+        </div>
+        <div class="category">
+          <h2>
+            <span class="category-icon">🍟</span> Fries Sandwich + Add-ons
+          </h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Fries Sandwich</div>
+              <div class="item-description">
+                Fries sandwich (Tortilla \ Shrak \ French)
+              </div>
+            </div>
+            <div class="item-price">1.00 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">French Fries</div>
+              <div class="item-description">Golden crispy fries</div>
+            </div>
+            <div class="item-price">0.75 JOD</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Matrix</div>
+              <div class="item-description">Matrix drink (can)</div>
+            </div>
+            <div class="item-price">0.25 JOD</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
