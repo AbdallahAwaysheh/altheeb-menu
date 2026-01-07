@@ -7,16 +7,16 @@
     <title>Shawarma Wolf Menu</title>
   </head>
 
-  <body>
+  <body class="styled-bg">
     <button id="styleToggle" aria-label="Toggle background style">
        EN
     </button>
 
-    <div class="container">
+    <div class="container blur-style">
       <header>
         <img
           class="logo"
-          src="./photos/logo (2).jpg"
+          src="./photos/logo.jpg"
           alt="Shawarma Wolf Logo"
         />
       </header>
@@ -34,8 +34,11 @@
               <div class="item-description">
                 ساندويش حجم كبير من دجاج الشاورما مع مثومة
               </div>
+              <div class="item-price">1.25 د.أ</div>
             </div>
-            <div class="item-price">1.25 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/sandwesh-shawerma.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -43,8 +46,11 @@
               <div class="item-description">
                 وجبة حجم عادي من دجاج الشاورما مع مثومة وبطاطا ومخلل
               </div>
+              <div class="item-price">2.45 د.أ</div>
             </div>
-            <div class="item-price">2.45 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/shawerma meal.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -52,8 +58,11 @@
               <div class="item-description">
                 وجبة حجم سوبر من دجاج الشاورما مع مثومة وبطاطا ومخلل
               </div>
+              <div class="item-price">3.10 د.أ</div>
             </div>
-            <div class="item-price">3.10 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/shawerma meal.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -61,8 +70,11 @@
               <div class="item-description">
                 وجبة حجم دبل من دجاج الشاورما مع مثومة وبطاطا ومخلل
               </div>
+              <div class="item-price">3.75 د.أ</div>
             </div>
-            <div class="item-price">3.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/shawerma-meal-large.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -70,8 +82,11 @@
               <div class="item-description">
                 وجبة حجم تربل من دجاج الشاورما مع مثومة وعلبة بطاطا ومخلل
               </div>
+              <div class="item-price">5 د.أ</div>
             </div>
-            <div class="item-price">5 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/XL-shawerma-meal.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item" id="fam">
             <div class="item-info">
@@ -80,9 +95,45 @@
                 وجبة حجم عائلي تتكون من 7 ساندويشات مع 3 علب مثومةو3 علب بطاطا و
                 3 علب مخلل مع لتر ماتريكس
               </div>
+              <div class="item-price">12.00 د.أ</div>
             </div>
-            <div class="item-price">12.00 د.أ</div>
+            <div  id="fam-image">
+              <img class="food-image" src="./photos/food-images/fam-shawerma-meal.jpg" alt="" width="100%">
+            </div>
           </div>
+        </div>
+        <div class="category ar">
+          <h2>
+            <span class="category-icon"
+              ><img src="./photos/shawerma.png" alt="" width="50px"
+            /></span>
+            شاورما عربي
+          </h2>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">ساندويش شاورما عربي</div>
+              <div class="item-description">
+                ساندويش حجم كبير من دجاج الشاورما مع مثومة
+              </div>
+              <div class="item-price">1.25 د.أ</div>
+            </div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/shawerma-tahin.jpg" alt="" width="100%">
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">وجبة شاورما عربي</div>
+              <div class="item-description">
+                ساندويش حجم كبير من دجاج الشاورما مع مثومة
+              </div>
+              <div class="item-price">1.25 د.أ</div>
+            </div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/shawerma-meal-tahin.jpg" alt="" width="100%">
+            </div>
+          </div>
+
         </div>
 
         <div class="category">
@@ -98,8 +149,11 @@
               <div class="item-description">
                 فرنسي \ شراك \ تورتيلا \ حار \ بارد
               </div>
+              <div class="item-price">2.25 د.أ</div>
             </div>
-            <div class="item-price">2.25 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/zenger.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -107,8 +161,11 @@
               <div class="item-description">
                 (بطاطا + ماتريكس) فرنسي \ شراك \ تورتيلا \ حار \ بارد
               </div>
+              <div class="item-price">3.25 د.أ</div>
             </div>
-            <div class="item-price">3.25 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/zenger.jpg" alt="" width="100%">
+            </div>
           </div>
         </div>
 
@@ -118,22 +175,31 @@
             <div class="item-info">
               <div class="item-name">ساندويش برجر سماش (150 جرام)</div>
               <div class="item-description">طبقتين من لحم الانجوس</div>
+              <div class="item-price">3.75 د.أ</div>
             </div>
-            <div class="item-price">3.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/smash.jpeg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">ساندويش برجر سماش (225 جرام)</div>
               <div class="item-description">ثلاث طبقات من لحم الانجوس</div>
+              <div class="item-price">4.75 د.أ</div>
             </div>
-            <div class="item-price">4.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/smash.jpeg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">ساندويش برجر سماش (300 جرام)</div>
               <div class="item-description">اربع طبقات من لحم الانجوس</div>
+              <div class="item-price">5.75 د.أ</div>
             </div>
-            <div class="item-price">5.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/smash.jpeg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -141,8 +207,11 @@
               <div class="item-description">
                 (بطاطا + ماتريكس) طبقتين من لحم الانجوس
               </div>
+              <div class="item-price">4.75 د.أ</div>
             </div>
-            <div class="item-price">4.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/smash-meal.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -150,8 +219,11 @@
               <div class="item-description">
                 (بطاطا + ماتريكس) ثلاث طبقات من لحم الانجوس وراهم
               </div>
+              <div class="item-price">5.75 د.أ</div>
             </div>
-            <div class="item-price">5.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/smash-meal.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -159,8 +231,11 @@
               <div class="item-description">
                 (بطاطا + ماتريكس) اربع طبقات من لحم الانجوس
               </div>
+              <div class="item-price">6.75 د.أ</div>
             </div>
-            <div class="item-price">6.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/smash-meal.jpg" alt="" width="100%">
+            </div>
           </div>
         </div>
 
@@ -170,8 +245,11 @@
             <div class="item-info">
               <div class="item-name">ساندويش برجر دجاج</div>
               <div class="item-description">برجر ناشفيلد</div>
+              <div class="item-price">2.75 د.أ</div>
             </div>
-            <div class="item-price">2.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/nashfel.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -179,8 +257,11 @@
               <div class="item-description">
                 وجبة برجر ناشفيلد (بطاطا + ماتريكس)
               </div>
+              <div class="item-price">3.75 د.أ</div>
             </div>
-            <div class="item-price">3.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/nashfel-meal.jpg" alt="" width="100%">
+            </div>
           </div>
         </div>
         <div class="category">
@@ -193,22 +274,31 @@
               <div class="item-description">
                 ساندويش بطاطا (تورتيلا \ شراك \ فرنسي )
               </div>
+              <div class="item-price">1.00 د.أ</div>
             </div>
-            <div class="item-price">1.00 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/botato-sandwish.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">بطاطا مقلية</div>
               <div class="item-description">بطاطا مقرمشة ذهبية</div>
+              <div class="item-price">0.75 د.أ</div>
             </div>
-            <div class="item-price">0.75 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/botato.jpg" alt="" width="100%">
+            </div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">ماتريكس</div>
               <div class="item-description">مشروب ماتريكس(علبة)</div>
+              <div class="item-price">0.25 د.أ</div>
             </div>
-            <div class="item-price">0.25 د.أ</div>
+            <div class="item-image">
+              <img class="food-image" src="./photos/food-images/nashfel.jpg" alt="" width="100%">
+            </div>
           </div>
         </div>
       </div>
@@ -226,8 +316,8 @@
               <div class="item-description">
                 Large shawarma chicken sandwich with garlic sauce
               </div>
+              <div class="item-price">1.25 JOD</div>
             </div>
-            <div class="item-price">1.25 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -235,8 +325,8 @@
               <div class="item-description">
                 Regular-size shawarma chicken meal with garlic sauce, fries, and pickles
               </div>
+              <div class="item-price">2.45 JOD</div>
             </div>
-            <div class="item-price">2.45 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -244,8 +334,8 @@
               <div class="item-description">
                 Super-size shawarma chicken meal with garlic sauce, fries, and pickles
               </div>
+              <div class="item-price">3.10 JOD</div>
             </div>
-            <div class="item-price">3.10 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -253,8 +343,8 @@
               <div class="item-description">
                 Double-size shawarma chicken meal with garlic sauce, fries, and pickles
               </div>
+              <div class="item-price">3.75 JOD</div>
             </div>
-            <div class="item-price">3.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -262,8 +352,8 @@
               <div class="item-description">
                 Triple-size shawarma chicken meal with garlic sauce, a box of fries, and pickles
               </div>
+              <div class="item-price">5 JOD</div>
             </div>
-            <div class="item-price">5 JOD</div>
           </div>
           <div class="menu-item" id="fam">
             <div class="item-info">
@@ -272,8 +362,8 @@
                 Family-size meal consisting of 7 sandwiches with 3 garlic sauce cups,
                 3 fries boxes, and 3 pickle cups with 1 liter Matrix
               </div>
+              <div class="item-price">12.00 JOD</div>
             </div>
-            <div class="item-price">12.00 JOD</div>
           </div>
         </div>
 
@@ -290,8 +380,8 @@
               <div class="item-description">
                 French \ Shrak \ Tortilla \ Spicy \ Mild
               </div>
+              <div class="item-price">2.25 JOD</div>
             </div>
-            <div class="item-price">2.25 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -299,8 +389,8 @@
               <div class="item-description">
                 (Fries + Matrix) French \ Shrak \ Tortilla \ Spicy \ Mild
               </div>
+              <div class="item-price">3.25 JOD</div>
             </div>
-            <div class="item-price">3.25 JOD</div>
           </div>
         </div>
 
@@ -310,22 +400,22 @@
             <div class="item-info">
               <div class="item-name">Smash Burger Sandwich (150g)</div>
               <div class="item-description">Two layers of Angus beef</div>
+              <div class="item-price">3.75 JOD</div>
             </div>
-            <div class="item-price">3.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">Smash Burger Sandwich (225g)</div>
               <div class="item-description">Three layers of Angus beef</div>
+              <div class="item-price">4.75 JOD</div>
             </div>
-            <div class="item-price">4.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">Smash Burger Sandwich (300g)</div>
               <div class="item-description">Four layers of Angus beef</div>
+              <div class="item-price">5.75 JOD</div>
             </div>
-            <div class="item-price">5.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -333,8 +423,8 @@
               <div class="item-description">
                 (Fries + Matrix) Two layers of Angus beef
               </div>
+              <div class="item-price">4.75 JOD</div>
             </div>
-            <div class="item-price">4.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -342,8 +432,8 @@
               <div class="item-description">
                 (Fries + Matrix) Three layers of Angus beef
               </div>
+              <div class="item-price">5.75 JOD</div>
             </div>
-            <div class="item-price">5.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -351,8 +441,8 @@
               <div class="item-description">
                 (Fries + Matrix) Four layers of Angus beef
               </div>
+              <div class="item-price">6.75 JOD</div>
             </div>
-            <div class="item-price">6.75 JOD</div>
           </div>
         </div>
 
@@ -362,8 +452,8 @@
             <div class="item-info">
               <div class="item-name">Chicken Burger Sandwich</div>
               <div class="item-description">Nashville burger</div>
+              <div class="item-price">2.75 JOD</div>
             </div>
-            <div class="item-price">2.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
@@ -371,8 +461,8 @@
               <div class="item-description">
                 Nashville burger meal (Fries + Matrix)
               </div>
+              <div class="item-price">3.75 JOD</div>
             </div>
-            <div class="item-price">3.75 JOD</div>
           </div>
         </div>
         <div class="category">
@@ -385,22 +475,22 @@
               <div class="item-description">
                 Fries sandwich (Tortilla \ Shrak \ French)
               </div>
+              <div class="item-price">1.00 JOD</div>
             </div>
-            <div class="item-price">1.00 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">French Fries</div>
               <div class="item-description">Golden crispy fries</div>
+              <div class="item-price">0.75 JOD</div>
             </div>
-            <div class="item-price">0.75 JOD</div>
           </div>
           <div class="menu-item">
             <div class="item-info">
               <div class="item-name">Matrix</div>
               <div class="item-description">Matrix drink (can)</div>
+              <div class="item-price">0.25 JOD</div>
             </div>
-            <div class="item-price">0.25 JOD</div>
           </div>
         </div>
       </div>
