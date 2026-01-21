@@ -22,7 +22,7 @@ body {
     color: #ffffff;
     transition: background 0.4s ease;
     position: relative;
-    
+    line-height: 2.4;
 }
 
 body.styled-bg {
