@@ -5,14 +5,24 @@
     box-sizing: border-box;
 }
 
+@font-face{
+    font-family: "HamdyV3Bold";
+    src: url("./fonts/hamdy-v3-bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    
+}
+
 /* ================= BODY ================= */
 body {
-    font-family: "Arial", sans-serif;
+    font-family:"HamdyV3Bold", "Arial", sans-serif;
     min-height: 100vh;
     background: linear-gradient(135deg, #1a2332 0%, #0f1621 100%);
     color: #ffffff;
     transition: background 0.4s ease;
     position: relative;
+    
 }
 
 body.styled-bg {
@@ -64,6 +74,7 @@ body.styled-bg::before {
     padding: 35px;
     border-radius: 20px;
     transition: all 0.4s ease;
+    
 }
 
 .container.blur-style {
@@ -141,7 +152,9 @@ h1 {
     justify-content: space-between;
     gap: 10px;
     max-height: min-content;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    
+    
 }
 
 .menu-item {
@@ -200,7 +213,7 @@ h1 {
     text-align: right;
 }
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 @media (max-width: 768px) {
